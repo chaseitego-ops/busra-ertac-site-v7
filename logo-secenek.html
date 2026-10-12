@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logo seçenekleri</title><meta name="robots" content="noindex">
+<style>
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;src:url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2")}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter.woff2?v=2") format("woff2");font-weight:100 900}
+:root{--bg:#FFFCFA;--ink:#2F201A;--body:#5A4339;--accent:#A9583F;--tint:#F3DDD0}
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);padding:40px 16px 80px}
+h1{font-size:1.4rem;font-weight:600;max-width:1100px;margin:0 auto 8px}
+.lead{max-width:1100px;margin:0 auto 32px;color:var(--body)}
+.grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{border:1px solid #EFDCD1;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:22px;background:#fff}
+.card h2{font-size:1rem;font-weight:600}
+.card p{font-size:.92rem;color:var(--body);line-height:1.5}
+.big{display:grid;place-items:center;height:220px;background:var(--bg);border-radius:16px}
+.big svg{height:180px;width:auto;overflow:visible}
+.bar{display:flex;align-items:center;gap:.8rem;padding:16px 18px;border-radius:14px;background:var(--bg)}
+.bar svg{height:46px;width:auto;overflow:visible}
+.bar small{padding-left:.8rem;border-left:1px solid currentColor;font-size:.75rem;font-weight:500;line-height:1.25}
+.try{color:var(--accent);font-weight:500;text-decoration:none}
+.try:hover{text-decoration:underline}
+.m{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-size:100px}
+</style></head><body>
+<h1>Logo seçenekleri</h1>
+<p class="lead">Her seçenek büyük hâliyle ve sitenin sol üstündeki boyutuyla gösteriliyor. Kartın altındaki bağlantıyla seçeneği ana sayfa taslağında deneyebilirsiniz.</p>
+<div class="grid" id="grid"></div>
+<script>
+var V=[
+ {id:'orgu',ad:'1. Örgü',acik:'B ile E birbirinin içinden geçiyor: B üstte E\'nin önünden, altta arkasından geçer; iki harf örülmüş gibi durur.',
+  svg:function(u){return '<svg viewBox="0 0 130 110"><defs><clipPath id="t'+u+'"><rect x="-20" y="-20" width="170" height="70"/></clipPath></defs>'+
+   '<text class="m" x="8" y="88" fill="var(--accent)">B</text>'+
+   '<text class="m" x="38" y="88" fill="var(--ink)" stroke="var(--bg)" stroke-width="5" paint-order="stroke">E</text>'+
+   '<text class="m" x="8" y="88" fill="var(--accent)" stroke="var(--bg)" stroke-width="5" paint-order="stroke" clip-path="url(#t'+u+')">B</text></svg>'}},
+ {id:'oval',ad:'2. Oval mühür',acik:'Hero\'daki oval fotoğrafı tekrar eden ince bir oval içinde, kademeli ve iç içe B ve E.',
+  svg:function(u){return '<svg viewBox="0 0 110 130"><ellipse cx="55" cy="65" rx="50" ry="61" fill="none" stroke="var(--accent)" stroke-width="2"/>'+
+   '<text class="m" x="14" y="78" fill="var(--ink)">B</text>'+
+   '<text class="m" x="44" y="108" font-size="78" fill="var(--accent)" stroke="var(--bg)" stroke-width="5" paint-order="stroke">E</text></svg>'}},
+ {id:'kontur',ad:'3. Kontur ve dolgu',acik:'B yalnızca ince çizgiyle çizilmiş, E dolu; E, B\'nin gövdesinin üstüne biner. Hafif ve modern.',
+  svg:function(u){return '<svg viewBox="0 0 130 110">'+
+   '<text class="m" x="4" y="90" font-size="108" fill="none" stroke="var(--accent)" stroke-width="1.6">B</text>'+
+   '<text class="m" x="38" y="90" fill="var(--ink)">E</text></svg>'}},
+ {id:'katman',ad:'4. Katmanlı',acik:'Koyu B önde, açık kiremit E hemen sağ altında ona binerek duruyor. Sakin, yumuşak bir monogram. Şu an sitede kullanılan bu.',
+  svg:function(u){return '<svg viewBox="0 0 120 120">'+
+   '<text class="m" x="30" y="100" font-size="98" fill="#EBC6B4">E</text>'+
+   '<text class="m" x="6" y="84" font-size="88" fill="var(--ink)" stroke="var(--bg)" stroke-width="4" paint-order="stroke">B</text></svg>'}}
+];
+var g=document.getElementById('grid');
+V.forEach(function(v,i){g.insertAdjacentHTML('beforeend','<div class="card"><h2>'+v.ad+'</h2><div class="big">'+v.svg('a'+i)+'</div><div class="bar">'+v.svg('b'+i)+'<small>Özel Sağlık Meslek<br>Hizmet Birimi</small></div><p>'+v.acik+'</p></div>')});
+</script>
+</body></html>

@@ -1,0 +1,31 @@
+# Büşra Ertaç — Uzman Klinik Psikolog
+
+> Bostancı (Kadıköy, İstanbul) merkezli uzman klinik psikolog. Obsesif kompulsif bozukluk (OKB), kaygı bozuklukları ve travma alanlarında; Bilişsel Davranışçı Terapi, Metakognitif Terapi ve EMDR ile çalışır. Görüşmeler yüz yüze ve online yapılır.
+
+## Temel bilgiler
+- Unvan: Uzman Klinik Psikolog
+- Eğitim: Yeditepe Üniversitesi (Psikoloji, lisans); İstanbul Kent Üniversitesi (Klinik Psikoloji, tezli yüksek lisans)
+- Terapi eğitimleri: Bilişsel Davranışçı Terapi, Metakognitif Terapi, EMDR
+- Üyelikler: Türk Psikologlar Derneği, Kognitif ve Davranış Terapileri Derneği, EMDR Türkiye Derneği
+- Adres: Bostancı Mah. Emin Ali Paşa Cad. No:106 Zerren Apt. D:19, Kadıköy, İstanbul
+- Görüşme: yüz yüze (Bostancı) ve online
+- Başvuru: siteden doğrudan randevu verilmez; önce ön görüşme başvurusu alınır
+
+## Çalışma alanı sayfaları
+- [Takıntılar ve OKB](okb.html): OKB nedir, sık görülen biçimleri, terapide nasıl çalışılır
+- [Kaygı bozuklukları](kaygi.html): panik bozukluk, yaygın kaygı, sosyal kaygı, sağlık kaygısı
+- [Travma ve EMDR](emdr.html): travma sonrası belirtiler, EMDR'ın uygulanışı
+- [Panik atak ve panik bozukluk](panik-atak.html): Panik atak nedir, neden tekrarlar, terapide nasıl çalışılır? Uzman Klinik Psikolog Büşra Ertaç ile Bostancı’da yüz yüze ve online.
+- [Sosyal kaygı (sosyal fobi)](sosyal-kaygi.html): Sosyal kaygı nedir, utangaçlıktan farkı ne, terapide nasıl çalışılır? Uzman Klinik Psikolog Büşra Ertaç, Bostancı ve online.
+- [Sağlık kaygısı](saglik-kaygisi.html): Sağlık kaygısı (hastalık kaygısı) nedir, neden sürer, terapide nasıl çalışılır? Uzman Klinik Psikolog Büşra Ertaç, Bostancı ve online.
+- [Depresyon](depresyon.html): Depresyon belirtileri nelerdir, terapide nasıl çalışılır? Uzman Klinik Psikolog Büşra Ertaç ile Bostancı’da yüz yüze ve online.
+- [Bireysel psikoterapi](bireysel-psikoterapi.html): Yetişkinlerle bireysel psikoterapi; değerlendirme, hedef belirleme ve kanıta dayalı yöntemlerle yapılandırılmış süreç.
+- [Online psikoterapi](online-psikoterapi.html): Görüntülü görüşme yoluyla yürütülen psikoterapinin yapısı, uygunluk koşulları ve gizlilik.
+- [Bilişsel Davranışçı Terapi](bilissel-davranisci-terapi.html): BDT nedir, hangi sorunlarda kullanılır, seanslar nasıl ilerler.
+- [Metakognitif Terapi](metakognitif-terapi.html): MKT nedir, BDT’den farkı, endişe ve ruminasyonla çalışma.
+- [Gizlilik ve KVKK](gizlilik-ve-kvkk.html): Görüşmelerde gizlilik ilkeleri ve kişisel verilerin işlenmesi.
+- [Çift terapisi](cift-terapisi.html): Çift terapisi ne zaman gerekir, nasıl ilerler? Uzman Klinik Psikolog Büşra Ertaç ile Bostancı’da yüz yüze ve online çift terapisi.
+
+## İletişim
+- Instagram: https://www.instagram.com/psk.busraertac/
+- Başvuru: ana sayfadaki ön görüşme formu

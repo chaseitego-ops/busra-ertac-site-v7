@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telefon önizlemesi · Büşra Ertaç</title>
+<style>
+  body{ margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; background:#E9E4E0; font-family:system-ui,sans-serif; color:#2F201A; }
+  .phone{ width:390px; height:844px; border-radius:54px; padding:12px; background:#1d1d1f; box-shadow:0 40px 80px -30px rgba(0,0,0,.5); position:relative; }
+  .phone::before{ content:""; position:absolute; top:22px; left:50%; transform:translateX(-50%); width:120px; height:32px; border-radius:20px; background:#1d1d1f; z-index:2; }
+  iframe{ width:100%; height:100%; border:0; border-radius:42px; background:#fff; }
+  .bar{ display:flex; gap:10px; align-items:center; font-size:14px; }
+  button{ font:inherit; padding:.45rem .9rem; border-radius:999px; border:1px solid rgba(47,32,26,.2); background:#fff; cursor:pointer; }
+</style></head>
+<body>
+  <div class="bar"><strong>iPhone 13 boyutu (390×844)</strong><button onclick="document.querySelector('iframe').src='index.html?'+Date.now()">Yenile</button><button onclick="var f=document.querySelector('.phone');var w=f.style.width==='375px';f.style.width=w?'390px':'375px';f.style.height=w?'844px':'667px'">Küçük telefon / iPhone 13</button></div>
+  <div class="phone"><iframe src="index.html" title="Telefon görünümü"></iframe></div>
+</body></html>

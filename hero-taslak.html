@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hero taslağı</title><meta name="robots" content="noindex">
+<style>
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter.woff2?v=2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url("assets/fonts/InstrumentSerif-Italic-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+.it{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400}
+:root{--light:#FFFCFA;--ink:#2F201A;--body:#5A4339;--accent:#A9583F;--accent-h:#8E472F;--tint:#F3DDD0}
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--light);color:var(--ink)}
+.hero{position:relative;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:96px 16px 64px}
+.bg{position:absolute;inset:-4%;background:url(assets/img/hero-fircali.jpg) center/cover;animation:drift 38s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.04) translate3d(-1.2%,0,0)}to{transform:scale(1.1) translate3d(1.2%,-1%,0)}}
+.mist{position:absolute;left:-50%;width:200%;height:30%;pointer-events:none;background:radial-gradient(ellipse 22% 45% at 25% 50%,rgba(255,250,246,.55),transparent 70%),radial-gradient(ellipse 18% 40% at 70% 55%,rgba(255,250,246,.45),transparent 70%);filter:blur(6px)}
+.m1{top:48%;animation:mist 46s linear infinite}
+.m2{top:62%;opacity:.7;animation:mist 64s linear infinite reverse}
+@keyframes mist{from{transform:translate3d(0,0,0)}to{transform:translate3d(25%,0,0)}}
+.grain{position:absolute;inset:0;opacity:.18;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.fade{position:absolute;left:0;right:0;bottom:-1px;height:34%;pointer-events:none;background:linear-gradient(to bottom,rgba(255,252,250,0) 0%,rgba(255,252,250,.55) 45%,rgba(255,252,250,.9) 75%,#FFFCFA 100%)}
+.nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:22px 28px;z-index:3}
+.brand{display:flex;align-items:center;gap:.8rem;color:var(--ink);text-decoration:none}
+.brand .mono{height:44px;width:auto;flex:none;overflow:visible;display:block}
+.brand .mono{display:none}
+html:not([data-logo]) .brand .mono[data-v="4"],html[data-logo="1"] .brand .mono[data-v="1"],html[data-logo="2"] .brand .mono[data-v="2"],html[data-logo="3"] .brand .mono[data-v="3"],html[data-logo="4"] .brand .mono[data-v="4"]{display:block}
+html[data-logo="2"] .brand .mono{height:52px}
+.lpick{position:fixed;left:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:4px;padding:5px 5px 5px 14px;border-radius:999px;background:rgba(255,252,250,.92);backdrop-filter:blur(10px);box-shadow:0 8px 26px -12px rgba(120,60,40,.45);font-size:.85rem;color:var(--body)}
+.lpick span{margin-right:4px}
+.lpick button{min-width:36px;height:36px;border:0;border-radius:999px;background:none;font:inherit;font-weight:600;color:var(--ink);cursor:pointer}
+.lpick button.on{background:var(--ink);color:#FFFCFA}
+.lpick a{margin-left:4px;padding:0 10px;color:var(--accent);font-weight:500;text-decoration:none;white-space:nowrap}
+.brand .mono text{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400}
+@media (max-width:700px){.brand .mono{height:36px}}
+.brand small{padding-left:.8rem;border-left:1px solid currentColor;font-size:.75rem;font-weight:500;line-height:1.25;letter-spacing:.01em}
+.topveil{position:absolute;inset:0 0 auto 0;height:300px;pointer-events:none;z-index:1;background:radial-gradient(ellipse 620px 300px at 0 0,#FFFCFA 0%,#FFFCFA 38%,rgba(255,252,250,.75) 58%,rgba(255,252,250,0) 100%),linear-gradient(to bottom,rgba(255,252,250,.7) 0,rgba(255,252,250,.35) 90px,rgba(255,252,250,0) 200px)}
+@media (max-width:700px){.brand{gap:.6rem}.brand small{padding-left:.6rem;font-size:.6875rem}.topveil{height:220px;background:radial-gradient(ellipse 360px 210px at 0 0,#FFFCFA 0%,#FFFCFA 40%,rgba(255,252,250,.7) 62%,rgba(255,252,250,0) 100%),linear-gradient(to bottom,rgba(255,252,250,.7) 0,rgba(255,252,250,0) 160px)}}
+.burger{width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,252,250,.7);backdrop-filter:blur(10px);display:grid;place-content:center;gap:5px;cursor:pointer}
+.burger i{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px}
+.frame{position:relative;z-index:2;width:min(330px,70vw);aspect-ratio:4/5.2;border-radius:50%;overflow:hidden;box-shadow:0 30px 60px -34px rgba(120,60,40,.45);animation:breathe 7s ease-in-out infinite}
+.frame img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes breathe{50%{transform:translateY(-6px)}}
+.name{position:relative;z-index:2;text-align:center;margin-top:26px}
+.name h1{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(2.4rem,1.6rem + 2.6vw,3.6rem);letter-spacing:-.01em;line-height:1}
+.name p{margin-top:8px}
+.name p{color:var(--body);margin-top:4px}
+.cta{position:relative;z-index:2;margin-top:26px;display:inline-flex;align-items:center;gap:14px;padding:22px 40px;border-radius:999px;background:var(--accent);color:#FFFCFA;font-size:clamp(1.1rem,.9rem + .8vw,1.45rem);font-weight:600;text-decoration:none;overflow:hidden;box-shadow:0 18px 40px -18px rgba(142,71,47,.8);transition:transform .25s,background .25s}
+.cta:hover{transform:translateY(-3px);background:var(--accent-h)}
+.cta::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.28) 50%,transparent 65%);transform:translateX(-100%);animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{60%,100%{transform:translateX(100%)}}
+.cta::after{content:"";position:absolute;inset:-6px;border-radius:999px;border:2px solid rgba(169,88,63,.45);animation:ring 2.8s ease-out infinite}
+@keyframes ring{from{opacity:1;transform:scale(.96)}to{opacity:0;transform:scale(1.12)}}
+.arr{width:34px;height:34px;border-radius:50%;background:rgba(255,252,250,.2);display:grid;place-items:center}
+.manzara .manzara .bg{background-image:url(assets/img/hero-manzara.jpg);background-position:center 60%}
+body:not(.manzara) .mist{display:none}
+body:not(.manzara) .grain{opacity:.1}
+
+/* Menü bölümü */
+.menu{padding:56px 0 72px;overflow:hidden}
+.mw{max-width:1240px;margin:0 auto;padding:0 24px}
+.mhead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:28px}
+.mhead h2{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(3rem,2rem + 3.6vw,5.2rem);letter-spacing:-.015em;line-height:.95}
+.mctl{display:flex;gap:10px;align-items:center}
+.marr{width:52px;height:52px;border-radius:50%;border:1px solid #E7CDBF;background:#FFFCFA;display:grid;place-items:center;cursor:pointer;transition:transform .25s,background .25s,border-color .25s}
+.marr svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.marr:hover{transform:translateY(-2px);background:var(--tint);border-color:var(--tint)}
+.marr:disabled{opacity:.35;pointer-events:none}
+.mburger{height:52px;display:inline-flex;align-items:center;gap:12px;padding:0 22px 0 18px;border-radius:999px;border:0;background:var(--ink);color:#FFFCFA;font:inherit;font-weight:500;cursor:pointer;transition:transform .25s,background .25s}
+.mburger:hover{transform:translateY(-2px);background:#4a332a}
+.mb-ic{width:20px;height:14px;position:relative;display:block}
+.mb-ic i{position:absolute;left:0;width:100%;height:2px;border-radius:2px;background:currentColor;transition:transform .35s cubic-bezier(.6,.05,.3,1),opacity .2s,top .35s cubic-bezier(.6,.05,.3,1)}
+.mb-ic i:nth-child(1){top:0}.mb-ic i:nth-child(2){top:6px}.mb-ic i:nth-child(3){top:12px}
+.menu.open .mb-ic i:nth-child(1){top:6px;transform:rotate(45deg)}
+.menu.open .mb-ic i:nth-child(2){opacity:0}
+.menu.open .mb-ic i:nth-child(3){top:6px;transform:rotate(-45deg)}
+.mlist{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.6,.05,.3,1)}
+.mlist[hidden]{display:grid}
+.menu.open .mlist{grid-template-rows:1fr}
+.mlist ol{list-style:none;padding:0;margin:0;overflow:hidden;min-height:0}
+.mlist li{border-top:1px solid #EFDCD1;opacity:0;transform:translateY(12px);transition:opacity .35s,transform .45s cubic-bezier(.2,.7,.2,1)}
+.mlist li:last-child{border-bottom:1px solid #EFDCD1;margin-bottom:32px}
+.menu.open .mlist li{opacity:1;transform:none;transition-delay:calc(.08s + var(--i)*.05s)}
+.mlist a{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:20px;padding:14px 4px;color:var(--ink);text-decoration:none}
+.ml-th{width:64px;height:48px;border-radius:10px;overflow:hidden;display:block}
+.ml-th img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.ml-t{font-size:clamp(1.25rem,1rem + 1vw,1.9rem);font-weight:500;letter-spacing:-.02em;transition:transform .3s,color .3s}
+.ml-d{color:var(--body);font-size:.95rem}
+.mlist a:hover .ml-t{transform:translateX(6px);color:var(--accent)}
+.mlist a:hover .ml-th img{transform:scale(1.1)}
+.mtrack{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:max(24px,calc((100vw - 1240px)/2 + 24px));padding:4px max(24px,calc((100vw - 1240px)/2 + 24px)) 24px;scrollbar-width:none;cursor:grab;outline:none}
+.mtrack::-webkit-scrollbar{display:none}
+.mtrack.drag{cursor:grabbing;scroll-snap-type:none}
+.mtrack.drag .mc{pointer-events:none}
+.mc{position:relative;flex:0 0 clamp(260px,27vw,360px);aspect-ratio:3/4.1;border-radius:24px;overflow:hidden;scroll-snap-align:start;color:#FFFCFA;text-decoration:none;opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i)*.08s)}
+.menu.seen .mc{opacity:1;transform:none}
+.mc-img{position:absolute;inset:0;display:block}
+.mc-img img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04);transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.mc::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(47,32,26,.78) 0%,rgba(47,32,26,.25) 38%,rgba(47,32,26,0) 60%)}
+.mc-tx{position:absolute;left:22px;right:76px;bottom:22px;z-index:1;display:flex;flex-direction:column;gap:6px}
+.mc-tx b{font-size:clamp(1.3rem,1.05rem + .7vw,1.7rem);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.mc-tx small{font-size:.92rem;opacity:.86;line-height:1.35}
+.mc-arr{position:absolute;right:20px;bottom:22px;z-index:1;width:44px;height:44px;border-radius:50%;background:rgba(255,252,250,.18);backdrop-filter:blur(6px);display:grid;place-items:center;font-size:1.15rem;transition:background .3s,transform .3s}
+.mc:hover .mc-img img{transform:scale(1.12)}
+.mc:hover .mc-arr{background:var(--accent);transform:translateX(3px)}
+.mc:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.mprog{height:3px;background:#F1DFD5;border-radius:3px;overflow:hidden;margin-top:6px}
+.mprog i{display:block;height:100%;width:30%;background:var(--accent);border-radius:3px;transform-origin:left;transition:width .2s}
+@media (max-width:700px){
+  .menu{padding:40px 0 56px}
+  .mw{padding:0 16px}
+  .marr{display:none}
+  .mburger{height:48px;padding:0 18px 0 16px}
+  .mtrack{gap:14px;padding:4px 16px 20px;scroll-padding-left:16px}
+  .mc{flex-basis:78vw;border-radius:20px}
+  .mlist a{grid-template-columns:52px 1fr;column-gap:14px;row-gap:2px;padding:12px 2px}
+  .ml-th{width:52px;height:42px;grid-row:span 2}
+  .ml-d{grid-column:2;font-size:.88rem}
+}
+@media (prefers-reduced-motion:reduce){.mc,.mlist li{opacity:1!important;transform:none!important}}
+
+/* Hakkında */
+.about{padding:40px 0 120px}
+.aw{max-width:1240px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.aph{position:relative;margin:0;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:var(--tint)}
+.aph-bg{position:absolute;inset:-10%;background:url(assets/img/hero-fircali.jpg) 30% 40%/cover;opacity:.32;mix-blend-mode:multiply;animation:drift 40s ease-in-out infinite alternate}
+.aph img{position:absolute;left:50%;bottom:0;width:96%;transform:translateX(-50%);display:block}
+.atx h2{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(3rem,2rem + 3.6vw,5.2rem);letter-spacing:-.015em;line-height:.95;margin-bottom:28px}
+.alead{font-size:clamp(1.3rem,1.05rem + .9vw,1.75rem);line-height:1.4;color:var(--ink);letter-spacing:-.015em;margin-bottom:22px}
+.atx p:not(.alead){font-size:1.125rem;line-height:1.7;color:var(--body);max-width:62ch;margin-bottom:16px}
+.afacts{list-style:none;padding:0;margin:30px 0 0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #EFDCD1}
+.afacts li{padding:18px 16px 0 0;display:flex;flex-direction:column;gap:4px}
+.afacts li+li{padding-left:18px;border-left:1px solid #EFDCD1}
+.afacts b{font-size:1.15rem;font-weight:600;color:var(--accent);letter-spacing:-.01em}
+.afacts span{font-size:.95rem;color:var(--body);line-height:1.4}
+.aw2{display:block;margin-top:clamp(56px,8vw,104px)}
+.about h3{font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:12px}
+.acred{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px);margin-top:0;padding-top:36px;border-top:1px solid #EFDCD1}
+.acred ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px}
+.acred li{display:flex;flex-direction:column;gap:2px}
+.acred li b{font-weight:500;color:var(--ink);font-size:1.02rem}
+.acred li span{color:var(--body);font-size:.93rem}
+.abtns{display:flex;flex-wrap:wrap;gap:12px;margin-top:48px}
+.abtn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:500;transition:transform .25s,background .25s,color .25s}
+.abtn:hover{transform:translateY(-3px);background:var(--ink);color:#FFFCFA}
+.abtn--fill{background:var(--accent);border-color:var(--accent);color:#FFFCFA}
+.abtn--fill:hover{background:var(--accent-h);border-color:var(--accent-h)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.aph.rv{transform:none;clip-path:inset(18% 0 0 0 round 28px);transition:opacity .8s ease,clip-path 1.3s cubic-bezier(.2,.7,.2,1)}
+.aph.rv.in{clip-path:inset(0 0 0 0 round 28px)}
+@media (max-width:860px){
+  .about{padding:24px 0 96px}
+  .aw{grid-template-columns:1fr;padding:0 16px;gap:32px}
+  .aph{max-width:440px;width:100%;margin:0 auto}
+  .afacts{grid-template-columns:1fr}
+  .afacts li,.afacts li+li{padding:14px 0;border-left:0;border-bottom:1px solid #EFDCD1}
+  .acred{grid-template-columns:1fr;gap:28px}
+  .abtns{flex-direction:column}
+  .abtn{justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;clip-path:none!important}}
+.next{padding:80px 16px;text-align:center;color:var(--body)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+@media (max-width:700px){.hero{padding-top:84px;padding-bottom:84px}.frame{width:min(330px,60vw)}.name{margin-top:18px}.cta{margin-top:20px;padding:18px 30px}.lpick{left:50%;transform:translateX(-50%);bottom:10px}}
+</style></head><body>
+<script>if(location.search.includes("manzara"))document.body.className="manzara"</script>
+<section class="hero">
+  <div class="bg"></div><div class="mist m1"></div><div class="mist m2"></div><div class="grain"></div><div class="fade"></div><div class="topveil"></div>
+  <nav class="nav"><a class="brand" href="index.html" aria-label="Büşra Ertaç, ana sayfa"><svg class="mono" data-v="1" viewBox="4 12 116 90" aria-hidden="true"><defs><clipPath id="lgt"><rect x="-20" y="-20" width="170" height="70"/></clipPath></defs><text x="8" y="88" font-size="100" fill="#A9583F">B</text><text x="38" y="88" font-size="100" fill="#2F201A" stroke="#FFFCFA" stroke-width="5" paint-order="stroke">E</text><text x="8" y="88" font-size="100" fill="#A9583F" stroke="#FFFCFA" stroke-width="5" paint-order="stroke" clip-path="url(#lgt)">B</text></svg><svg class="mono" data-v="2" viewBox="3 2 104 126" aria-hidden="true"><ellipse cx="55" cy="65" rx="50" ry="61" fill="none" stroke="#A9583F" stroke-width="2.4"/><text x="14" y="78" font-size="100" fill="#2F201A">B</text><text x="44" y="108" font-size="78" fill="#A9583F" stroke="#FFFCFA" stroke-width="5" paint-order="stroke">E</text></svg><svg class="mono" data-v="3" viewBox="2 12 118 90" aria-hidden="true"><text x="4" y="90" font-size="108" fill="none" stroke="#A9583F" stroke-width="2">B</text><text x="38" y="90" font-size="100" fill="#2F201A">E</text></svg><svg class="mono" data-v="4" viewBox="0 18 96 88" aria-hidden="true"><text x="30" y="100" font-size="98" fill="#EBC6B4">E</text><text x="6" y="84" font-size="88" fill="#2F201A" stroke="#FFFCFA" stroke-width="4" paint-order="stroke">B</text></svg><small>Özel Sağlık Meslek<br>Hizmet Birimi</small></a><button class="burger" aria-label="Menü"><i></i><i></i><i></i></button></nav>
+  <div class="frame"><img src="assets/img/busra-ofis.webp" alt="Büşra Ertaç"></div>
+  <div class="name"><h1>Büşra Ertaç</h1><p>Uzman Klinik Psikolog</p></div>
+  <a class="cta" href="#">Ön Görüşme Başvurusu <span class="arr">→</span></a>
+</section>
+<section class="menu" id="menu" aria-labelledby="menu-h">
+  <div class="mw">
+    <div class="mhead">
+      <h2 id="menu-h">Menü</h2>
+      <div class="mctl">
+        <button class="marr" type="button" data-dir="-1" aria-label="Önceki"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="marr" type="button" data-dir="1" aria-label="Sonraki"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+        <button class="mburger" type="button" aria-expanded="false" aria-controls="mlist"><span class="mb-ic" aria-hidden="true"><i></i><i></i><i></i></span><span class="mb-t">Tüm sayfalar</span></button>
+      </div>
+    </div>
+    <div class="mlist" id="mlist" hidden><ol><li style="--i:0"><a href="calisma-alanlari.html"><span class="ml-th"><img src="assets/img/m-emdr.webp" alt="" loading="lazy"></span><span class="ml-t">Uzmanlık alanları</span><span class="ml-d">OKB, kaygı, travma ve diğer alanlar</span></a></li><li style="--i:1"><a href="ozgecmis.html"><span class="ml-th"><img src="assets/img/s-plan.webp" alt="" loading="lazy"></span><span class="ml-t">Özgeçmiş</span><span class="ml-d">Eğitim, terapi eğitimleri ve üyelikler</span></a></li><li style="--i:2"><a href="ekip.html"><span class="ml-th"><img src="assets/img/s-degerlendirme.webp" alt="" loading="lazy"></span><span class="ml-t">Ekip</span><span class="ml-d">Birlikte çalışılan uzmanlar</span></a></li><li style="--i:3"><a href="degerlendirmeler.html"><span class="ml-th"><img src="assets/img/g-eller.webp" alt="" loading="lazy"></span><span class="ml-t">Danışan değerlendirmeleri</span><span class="ml-d">5,0 puan, 7 değerlendirme</span></a></li><li style="--i:4"><a href="iletisim.html"><span class="ml-th"><img src="assets/img/g-istanbul.webp" alt="" loading="lazy"></span><span class="ml-t">Ofis ve iletişim</span><span class="ml-d">Bostancı, Kadıköy ve online</span></a></li><li style="--i:5"><a href="index.html#basvuru"><span class="ml-th"><img src="assets/img/s-basvuru.webp" alt="" loading="lazy"></span><span class="ml-t">Ön görüşme başvurusu</span><span class="ml-d">Kısa form, size dönüş yapılır</span></a></li></ol></div>
+  </div>
+  <div class="mtrack" tabindex="0" aria-label="Sayfalar, yana kaydırın"><a class="mc" href="calisma-alanlari.html" style="--i:0"><span class="mc-img"><img src="assets/img/m-emdr.webp" alt="" loading="lazy"></span><span class="mc-tx"><b>Uzmanlık alanları</b><small>OKB, kaygı, travma ve diğer alanlar</small></span><span class="mc-arr" aria-hidden="true">→</span></a><a class="mc" href="ozgecmis.html" style="--i:1"><span class="mc-img"><img src="assets/img/s-plan.webp" alt="" loading="lazy"></span><span class="mc-tx"><b>Özgeçmiş</b><small>Eğitim, terapi eğitimleri ve üyelikler</small></span><span class="mc-arr" aria-hidden="true">→</span></a><a class="mc" href="ekip.html" style="--i:2"><span class="mc-img"><img src="assets/img/s-degerlendirme.webp" alt="" loading="lazy"></span><span class="mc-tx"><b>Ekip</b><small>Birlikte çalışılan uzmanlar</small></span><span class="mc-arr" aria-hidden="true">→</span></a><a class="mc" href="degerlendirmeler.html" style="--i:3"><span class="mc-img"><img src="assets/img/g-eller.webp" alt="" loading="lazy"></span><span class="mc-tx"><b>Danışan değerlendirmeleri</b><small>5,0 puan, 7 değerlendirme</small></span><span class="mc-arr" aria-hidden="true">→</span></a><a class="mc" href="iletisim.html" style="--i:4"><span class="mc-img"><img src="assets/img/g-istanbul.webp" alt="" loading="lazy"></span><span class="mc-tx"><b>Ofis ve iletişim</b><small>Bostancı, Kadıköy ve online</small></span><span class="mc-arr" aria-hidden="true">→</span></a><a class="mc" href="index.html#basvuru" style="--i:5"><span class="mc-img"><img src="assets/img/s-basvuru.webp" alt="" loading="lazy"></span><span class="mc-tx"><b>Ön görüşme başvurusu</b><small>Kısa form, size dönüş yapılır</small></span><span class="mc-arr" aria-hidden="true">→</span></a></div>
+  <div class="mw"><div class="mprog" aria-hidden="true"><i></i></div></div>
+</section>
+<section class="about" id="hakkinda" aria-labelledby="about-h">
+  <div class="aw">
+    <figure class="aph rv">
+      <span class="aph-bg" aria-hidden="true"></span>
+      <img src="assets/img/busra-kesik.webp" alt="Uzman Klinik Psikolog Büşra Ertaç" loading="lazy">
+    </figure>
+    <div class="atx">
+      <h2 id="about-h" class="rv">Hakkında</h2>
+      <p class="alead rv">Uzman Klinik Psikolog Büşra Ertaç, bireysel psikoterapi ve çift terapisi alanında Bostancı'daki ofisinde ve online olarak çalışmaktadır.</p>
+      <p class="rv">Lisans eğitimini Yeditepe Üniversitesi Psikoloji Bölümü'nde, yüksek lisans eğitimini İstanbul Kent Üniversitesi Klinik Psikoloji programında tamamlamıştır. Prof. Dr. Mehmet Zihni Sungur danışmanlığında hazırladığı yüksek lisans tezinde obsesif inanışların çocukluk çağı olumsuz yaşantıları, bilişsel çarpıtmalar ve ruminasyonla ilişkisini incelemiştir.</p>
+      <p class="rv">Klinik çalışmalarının merkezinde obsesif kompulsif bozukluk, kaygı bozuklukları ve travma yer almaktadır. Panik bozukluk, sosyal kaygı, sağlık kaygısı ve depresyon da çalışılan alanlar arasındadır.</p>
+      <ul class="afacts rv">
+        <li><b>2020</b><span>yılından bu yana klinik deneyim</span></li>
+        <li><b>Yüz yüze ve online</b><span>Bostancı, Kadıköy</span></li>
+        <li><b>Kanıta dayalı</b><span>BDT, Metakognitif Terapi, EMDR</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="aw aw2">
+    <div class="acred">
+      <div class="rv"><h3>Eğitim</h3><ul><li><b>Klinik Psikoloji, Tezli Yüksek Lisans</b><span>İstanbul Kent Üniversitesi</span></li><li><b>Psikoloji, Lisans</b><span>Yeditepe Üniversitesi</span></li></ul></div>
+      <div class="rv"><h3>Terapi eğitimleri</h3><ul><li><b>Bilişsel Davranışçı Terapi</b><span>Prof. Dr. Mehmet Zihni Sungur</span></li><li><b>EMDR</b><span>Emre Konuk, Davranış Bilimleri Enstitüsü</span></li><li><b>Metakognitif Terapi</b></li></ul></div>
+      <div class="rv"><h3>Mesleki üyelikler</h3><ul><li><b>Türk Psikologlar Derneği</b></li><li><b>Kognitif ve Davranış Terapileri Derneği</b></li><li><b>EMDR Türkiye Derneği</b></li></ul></div>
+    </div>
+    <div class="abtns rv">
+      <a class="abtn" href="ozgecmis.html">Özgeçmişin tamamı <span aria-hidden="true">→</span></a>
+      <a class="abtn abtn--fill" href="index.html#basvuru">Ön görüşme başvurusu <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+
+<script>
+(function(){
+  var sec=document.getElementById('menu'),tr=sec.querySelector('.mtrack'),bar=sec.querySelector('.mprog i'),
+      bt=sec.querySelector('.mburger'),list=document.getElementById('mlist'),arrs=sec.querySelectorAll('.marr');
+  // açılır liste
+  function setOpen(o){sec.classList.toggle('open',o);bt.setAttribute('aria-expanded',o);list.hidden=false;bt.querySelector('.mb-t').textContent=o?'Kapat':'Tüm sayfalar'}
+  bt.addEventListener('click',function(){setOpen(!sec.classList.contains('open'))});
+  // üstteki menü düğmesi: bölüme kayar ve listeyi açar
+  var top=document.querySelector('.nav .burger');
+  if(top)top.addEventListener('click',function(){sec.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){setOpen(true)},450)});
+  // ekrana girince kartlar sırayla gelir
+  new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){sec.classList.add('seen');o.disconnect()}})},{threshold:.2}).observe(sec);
+  // ilerleme çubuğu ve oklar
+  function upd(){var m=tr.scrollWidth-tr.clientWidth,p=m>0?tr.scrollLeft/m:0,vis=tr.clientWidth/tr.scrollWidth;
+    bar.style.width=(vis+(1-vis)*p)*100+'%';arrs[0].disabled=tr.scrollLeft<4;arrs[1].disabled=tr.scrollLeft>m-4}
+  tr.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  function step(){var c=tr.querySelector('.mc');return c.getBoundingClientRect().width+20}
+  arrs.forEach(function(a){a.addEventListener('click',function(){tr.scrollBy({left:step()*a.dataset.dir,behavior:'smooth'})})});
+  tr.addEventListener('keydown',function(e){if(e.key=='ArrowRight'||e.key=='ArrowLeft'){e.preventDefault();tr.scrollBy({left:step()*(e.key=='ArrowRight'?1:-1),behavior:'smooth'})}});
+  // masaüstünde fareyle sürükleme
+  var down=false,sx=0,sl=0,moved=0;
+  tr.addEventListener('pointerdown',function(e){if(e.pointerType!='mouse')return;down=true;moved=0;sx=e.clientX;sl=tr.scrollLeft});
+  addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>4){moved=1;tr.classList.add('drag')}tr.scrollLeft=sl-dx});
+  addEventListener('pointerup',function(){if(!down)return;down=false;if(moved){var w=step(),t=Math.round(tr.scrollLeft/w)*w;tr.classList.remove('drag');tr.scrollTo({left:t,behavior:'smooth'})}});
+  tr.addEventListener('click',function(e){if(moved){e.preventDefault();moved=0}},true);
+  tr.addEventListener('dragstart',function(e){e.preventDefault()});
+})();
+</script>
+<script>
+(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,sib=[].indexOf.call(el.parentNode.children,el);el.style.transitionDelay=Math.min(sib,4)*.08+'s';el.classList.add('in');io.unobserve(el)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)})})();
+</script>
+<div class="lpick" role="group" aria-label="Logo seçenekleri"><span>Logo</span><button data-l="1">1</button><button data-l="2">2</button><button data-l="3">3</button><button data-l="4">4</button><a href="logo-secenek.html">Karşılaştır</a></div>
+<script>
+(function(){var r=document.documentElement,bs=document.querySelectorAll('.lpick button'),k='be-logo';
+function set(v){r.setAttribute('data-logo',v);[].forEach.call(bs,function(b){b.classList.toggle('on',b.dataset.l==v)});try{localStorage.setItem(k,v)}catch(e){}}
+[].forEach.call(bs,function(b){b.onclick=function(){set(b.dataset.l)}});
+var q=(location.search.match(/logo=(\d)/)||[])[1],st=null;try{st=localStorage.getItem(k)}catch(e){}
+set(q||st||'4');})();
+</script>
+</body></html>
